@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <ul class="fruits">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li data-foodtype="squishy">Orange</li>
+        <li>Pear</li>
+        <li>Kiwi</li>
+        <li id="berry">Strawberry</li>
+    </ul>
+
+    <script>
+      const strawberry = document.getElementById('berry');
+      console.log(strawberry);
+      console.log(`I found the berry: ${strawberry.innerHTML}`);
+      strawberry.style.backgroundColor = 'red';
+
+      const orange = document.querySelector("[data-foodtype='squishy']");
+      console.log(orange);
+      console.log(`I found the fruit: ${orange.innerHTML}`);
+      orange.style.backgroundColor = 'orange';
+
+      const fruits = document.getElementsByTagName('li');
+
+      for (let i = 0; i < fruits.length; i++) {
+        console.log(fruits[i].innerHTML);
+
+        if (fruits[i].innerHTML === "Pear") {
+          fruits[i].style.backgroundColor = 'green';
+        }
+        fruits[i].style.listStyleType = 'none';
+        fruits[i].style.width = '100px';
+      }
+      console.log(fruits);
+      fruitsv2 = document.querySelectorAll('li');
+      console.log(fruitsv2);
+
+      for (let i = 0; i < fruitsv2.length; i++) {
+        fruitsv2[i].style.borderStyle = 'solid';
+        fruitsv2[i].style.borderWidth = '1px';
+        console.log(fruitsv2[i].innerHTML);
+      }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
